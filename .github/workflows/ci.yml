@@ -1,0 +1,40 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      mongo:
+        image: mongo:7
+        ports: ["27017:27017"]
+    defaults: { run: { working-directory: backend } }
+    env:
+      MONGO_URL: mongodb://localhost:27017
+      DB_NAME: anchorai_ci
+      TEST_DB_NAME: anchorai_ci
+      APP_URL: http://localhost:3000
+      JWT_SECRET: ci-secret-not-for-production
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_PASSWORD: ci-admin-password
+      EMAIL_FROM_NAME: AnchorAI News
+      EMAIL_BACKEND: none
+      STORAGE_BACKEND: local
+      FAL_KEY: ci-placeholder-mocked
+      RAZORPAY_WEBHOOK_SECRET: test_webhook_secret
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r requirements-deploy.txt pytest-xdist
+      - run: python -m pytest tests/test_anchorai.py -q -n 0
+  frontend:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: frontend } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - run: yarn install --frozen-lockfile
+      - run: REACT_APP_BACKEND_URL=https://api.example.com yarn build
+      - uses: actions/upload-artifact@v4
+        with: { name: frontend-build, path: frontend/build }

@@ -1,0 +1,192 @@
+{
+  "project_name": "AnchorAI News",
+  "project_overview": {
+    "mission": "Multi-tenant SaaS platform converting authorized anchor portraits and Gujarati news scripts into broadcast-quality 16:9 Breaking News MP4 videos with lip-synced AI anchors, Gujarati subtitles, animated tickers, and AI disclosure labels.",
+    "target_audience": "Gujarati digital news channels, local journalists, media agencies, content creators, and broadcast studios.",
+    "design_archetype": "Editorial Command Center / Broadcast Control Room — authoritative, dark navy & charcoal aesthetics, sharp contrast, live crimson breaking-news accents, clean cards, and high data density."
+  },
+  "theme_palette": {
+    "background_primary": "#0B0F19",
+    "background_secondary": "#111827",
+    "surface_card": "#182232",
+    "surface_card_hover": "#1F2B3E",
+    "border_subtle": "#263346",
+    "border_bright": "#374151",
+    "text_primary": "#F9FAFB",
+    "text_secondary": "#9CA3AF",
+    "text_muted": "#6B7280",
+    "brand_accent_red": "#EF4444",
+    "brand_accent_red_dark": "#DC2626",
+    "brand_accent_red_glow": "rgba(239, 68, 68, 0.25)",
+    "status_completed": "#10B981",
+    "status_processing": "#3B82F6",
+    "status_queued": "#F59E0B",
+    "status_failed": "#EF4444",
+    "forbidden_colors": ["#7351B7", "#1B93A4", "#000000"]
+  },
+  "typography": {
+    "font_google_import": "<link href=\"https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+Gujarati:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap\" rel=\"stylesheet\">",
+    "display_font": "'Outfit', 'Bebas Neue', sans-serif",
+    "body_font": "'Plus Jakarta Sans', sans-serif",
+    "gujarati_font": "'Noto Sans Gujarati', 'Baloo 2', sans-serif",
+    "code_font": "'JetBrains Mono', monospace",
+    "hierarchy": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white",
+      "h2_section": "text-2xl sm:text-3xl font-bold tracking-tight text-white",
+      "h3_card": "text-lg sm:text-xl font-semibold text-white",
+      "body": "text-sm sm:text-base text-gray-300 leading-relaxed",
+      "gujarati_editor": "font-['Noto_Sans_Gujarati','Baloo_2'] text-base sm:text-lg text-white leading-loose"
+    }
+  },
+  "layout_and_composition": {
+    "style": "Desktop-first broadcast command dashboard with sticky composition preview side-panel for video creation wizard.",
+    "container_padding": "p-4 sm:p-6 lg:p-8",
+    "card_style": "bg-[#182232] border border-[#263346] rounded-xl shadow-lg hover:border-gray-700 transition-colors duration-200",
+    "wizard_layout": "Grid layout: 8 columns script & step parameters + 4 columns sticky 16:9 composition preview canvas (1920x1080 aspect ratio).",
+    "header_style": "backdrop-blur-xl bg-[#0B0F19]/90 border-b border-[#263346] sticky top-0 z-50 px-6 py-4 flex items-center justify-between"
+  },
+  "pages_specification": {
+    "landing_page": {
+      "path": "/",
+      "sections": [
+        "Hero section with dynamic headline, Gujarati script demonstration prompt, live credit status counter badge, and clear CTA 'Start 16:9 Studio'",
+        "Workflow overview step-by-step banner (Upload Anchor Portrait → Input Gujarati Script → Customize Channel Overlay → Render 1080p MP4)",
+        "Key Feature Bento Grid (Lip-sync AI Talking Anchor, Native Gujarati Subtitles, Live Breaking News Ticker, Automated AI Disclosure Badge)",
+        "Credit Pack Pricing Table in INR (Starter ₹999 / Pro ₹2,999 / Studio ₹7,999) with explicit breakdown of video output length and resolution (1080p 16:9 MP4)",
+        "Gujarati language capabilities & broadcast compliance information section",
+        "Footer with system status, terms, privacy, and media guidelines"
+      ],
+      "constraints": "NO sample videos. Rely on crisp 16:9 static preview mockups, badges, and high-contrast UI graphics."
+    },
+    "auth_page": {
+      "path": "/auth",
+      "modes": ["signin", "signup", "verify-email", "reset-password"],
+      "features": "Clean charcoal card container, tab switcher between Sign In and Sign Up, form validation, password visibility toggle, OTP verification flow."
+    },
+    "dashboard": {
+      "path": "/dashboard",
+      "widgets": [
+        "Real-time Telemetry Metrics: Generated Videos Count, In-Processing Jobs, Completed Count, Failed Jobs",
+        "Credit Balance Widget with Quick Recharge button",
+        "Recent Projects Grid with 16:9 thumbnails, status badges, Gujarati titles, and quick action dropdown",
+        "Recent Credit Ledger Transactions table"
+      ]
+    },
+    "anchor_library": {
+      "path": "/anchors",
+      "features": [
+        "Anchor Portrait Grid with status (Active, Consent Pending, Revoked)",
+        "Upload New Anchor Portrait Modal with image dropzone & face check verification indicator",
+        "Mandatory Anchor Consent Agreement Form checkbox & digital signature basis",
+        "Revoke Consent & Delete Anchor action buttons"
+      ]
+    },
+    "channels": {
+      "path": "/channels",
+      "features": [
+        "Brand Preset Selector (Create & manage channel presets e.g., 'Gujarat Samachar Live', 'TV9 Gujarati Style', 'News24 Default')",
+        "Channel Logo Upload & Corner Placement Selector (Top-Left, Top-Right, Bottom-Left, Bottom-Right)",
+        "Subtitle Customization (Font size, text color, background box color, position)",
+        "Ticker Customization (Header label e.g., 'તાજા સમાચાર', ticker speed, text color, background bar color)"
+      ]
+    },
+    "video_creator_wizard": {
+      "path": "/create-video",
+      "steps": [
+        "Step 1: Select Authorized Anchor Portrait from Library",
+        "Step 2: Gujarati Script Editor with live word count, character count, and estimated speech duration calculator (~130 wpm)",
+        "Step 3: Narration Voice Selection (Male/Female Gujarati TTS tones) with live audio sample preview player",
+        "Step 4: Template Selector (Breaking News Red Accent, Flash Update, Studio Minimal)",
+        "Step 5: Video Output Settings (Resolution: 1080p 16:9, Subtitle Toggle, Ticker Toggle, AI Disclosure Badge)",
+        "Step 6: Channel Branding Overlays (Logo positioning & live banner text preview)",
+        "Step 7: Consent Check, Credit Cost Estimate (e.g., '25 Credits for 60s Video'), and Final 'Generate 16:9 Video' CTA"
+      ],
+      "composition_preview": "Sticky 16:9 composition preview box displaying real-time live layout mockup (Anchor placement, Gujarati subtitles, Breaking News banner, Channel Logo, AI disclosure label)."
+    },
+    "jobs_page": {
+      "path": "/jobs",
+      "features": [
+        "Filterable Jobs Table by status: draft, queued, validating, generating, retrieving, rendering, completed, failed, cancelled",
+        "Live progress bar & rendering telemetry step indicators for active jobs",
+        "Job Detail Side Drawer with error logs for failed jobs and retry CTA"
+      ]
+    },
+    "video_library": {
+      "path": "/videos",
+      "features": [
+        "Video Grid with 16:9 cards, Gujarati title, date, duration, and credit cost",
+        "Video Player Modal with HTML5 video control",
+        "Download Actions: MP4 Video, SRT Subtitles file, VTT Subtitles file",
+        "Rename Title & Delete Video dialogs"
+      ]
+    },
+    "billing": {
+      "path": "/billing",
+      "features": [
+        "Current Credit Balance Summary Card",
+        "Credit Packs Grid in INR (Starter ₹999 for 100 credits, Pro ₹2,999 for 350 credits, Agency ₹7,999 for 1000 credits)",
+        "Mock Razorpay/Stripe Instant Checkout Modal",
+        "Comprehensive Transaction Ledger Table (Date, Action, Credits +/- , Reference ID, Invoice Receipt Download)"
+      ]
+    },
+    "account_privacy": {
+      "path": "/account",
+      "features": [
+        "User Profile Info & Organization Name",
+        "Security Settings (Password Change, 2FA status)",
+        "AI Ethics & Consent Privacy Center (Data Retention settings, Anchor Consent Records, Export Personal Data)"
+      ]
+    },
+    "admin_panel": {
+      "path": "/admin",
+      "features": [
+        "AI Provider Health Monitor (ElevenLabs/Azure Voice TTS API status, SadTalker/HeyGen Lip-Sync Renderer health, Storage S3 response time)",
+        "Manual Credit Adjustment Tool (Search User Email, Add/Deduct Credits, Reason)",
+        "System Audit Events Log (Anchor creation, Consent revocation, Video generation, Admin actions)"
+      ]
+    }
+  },
+  "image_urls": {
+    "anchors": [
+      {
+        "url": "https://images.unsplash.com/photo-1781888681811-332968760c2a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHw0fHxuZXdzJTIwYW5jaG9yJTIwcHJlc2VudGVyJTIwc3R1ZGlvJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzkxNjMxNDE2fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Female Gujarati News Anchor - Professional Studio Portrait"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1767175620484-1ed37931a0d1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwzfHxuZXdzJTIwYW5jaG9yJTIwcHJlc2VudGVyJTIwc3R1ZGlvJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzkxNjMxNDE2fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Male Gujarati News Anchor - Dark Suit Studio Portrait"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1760543998147-117ae5649c5c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxuZXdzJTIwYW5jaG9yJTIwcHJlc2VudGVyJTIwc3R1ZGlvJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzkxNjMxNDE2fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Senior Anchor Presenter - Formal Studio Portrait"
+      }
+    ],
+    "studio_backgrounds": [
+      {
+        "url": "https://images.unsplash.com/photo-1581092787765-e3feb951d987?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwyfHxuZXdzJTIwYnJvYWRjYXN0JTIwc3R1ZGlvJTIwYmFja2dyb3VuZCUyMGRhcmt8ZW58MHx8fHwxNzkxNjMxNDIzfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Broadcast News Room Studio Environment"
+      }
+    ]
+  },
+  "data_testid_conventions": {
+    "rule": "Every interactive button, link, tab, input, table row, and modal MUST contain a kebab-case data-testid.",
+    "examples": [
+      "data-testid=\"nav-dashboard-link\"",
+      "data-testid=\"wizard-step-2-next-button\"",
+      "data-testid=\"gujarati-script-textarea\"",
+      "data-testid=\"anchor-card-select-1\"",
+      "data-testid=\"generate-video-btn\"",
+      "data-testid=\"credit-balance-badge\"",
+      "data-testid=\"download-mp4-btn\"",
+      "data-testid=\"job-status-chip-completed\""
+    ]
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Use Dark Navy (#0B0F19) and Dark Charcoal (#182232) for background and card containers. Use pure red (#EF4444 / #DC2626) exclusively for Breaking News accents, live indicators, and primary action highlights.",
+    "Import Noto Sans Gujarati & Baloo 2 from Google Fonts in index.html to render Gujarati text accurately without rendering boxes or fallback issues.",
+    "Ensure all interactive components use Shadcn/UI primitives customized with dark-mode tailwind styles.",
+    "Include explicit data-testid attributes on all interactive elements as per data_testid_conventions.",
+    "Do not build generic centered layouts or light mode default styles. Keep the theme consistently rich, high-contrast dark mode across all pages.",
+    "Maintain high contrast text: White text (#F9FAFB) for headings and inputs, Gray-300/400 (#9CA3AF) for body text."
+  ]
+}

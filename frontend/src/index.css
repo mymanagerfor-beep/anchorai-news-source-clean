@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 222 39% 7%;
+        --foreground: 210 20% 98%;
+        --card: 216 35% 15%;
+        --card-foreground: 210 20% 98%;
+        --popover: 220 39% 11%;
+        --popover-foreground: 210 20% 98%;
+        --primary: 0 72% 51%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 216 33% 19%;
+        --secondary-foreground: 210 20% 98%;
+        --muted: 216 33% 19%;
+        --muted-foreground: 218 11% 65%;
+        --accent: 216 33% 19%;
+        --accent-foreground: 210 20% 98%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 215 30% 21%;
+        --input: 215 30% 21%;
+        --ring: 0 84% 60%;
+        --radius: 0.6rem;
+    }
+}
+
+@layer base {
+    * { @apply border-border; }
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Plus Jakarta Sans', 'Noto Sans Gujarati', sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .font-display { font-family: 'Outfit', 'Noto Sans Gujarati', sans-serif; }
+    ::selection { background: rgba(239, 68, 68, 0.35); }
+}
+
+.gu { font-family: 'Noto Sans Gujarati', 'Plus Jakarta Sans', sans-serif; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.card-surface { background: #182232; border: 1px solid #263346; border-radius: 0.85rem; }
+.eyebrow { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: #9CA3AF; font-weight: 600; }
+.live-dot { width: 8px; height: 8px; border-radius: 9999px; background: #EF4444; box-shadow: 0 0 0 0 rgba(239,68,68,.6); animation: pulse-red 1.8s infinite; }
+@keyframes pulse-red { 0% { box-shadow: 0 0 0 0 rgba(239,68,68,.55);} 70% { box-shadow: 0 0 0 8px rgba(239,68,68,0);} 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0);} }
+@keyframes ticker { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+.ticker-run { animation: ticker 22s linear infinite; }
+.fade-up { animation: fadeUp .5s ease both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: none;} }
